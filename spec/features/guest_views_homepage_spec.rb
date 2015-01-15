@@ -8,7 +8,7 @@ feature "Guest views homepage" do
 	end
 
 	scenario "with one or many published articles" do
-		article = FactoryGirl.create(:article)
+		article = FactoryGirl.create(:published_article)
 
 		visit root_path
 

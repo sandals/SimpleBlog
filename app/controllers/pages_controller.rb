@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
 	def index
-		@articles = Article.all
+		@articles = Article.where('published = true')
 	end
 end

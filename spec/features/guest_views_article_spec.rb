@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "Guest views article" do
 	scenario "from homepage" do
-		article = FactoryGirl.create(:article)
+		article = FactoryGirl.create(:published_article)
 
 		visit root_path
 		click_link article.title
