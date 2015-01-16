@@ -1,2 +1,13 @@
 <%= @article.title %>
 <%= @article.body %>
+<hr>
+<% @article.comments.each do |comment| %>
+	<h2><%= comment.author %></h2>
+	<p><%= comment.body %></p>
+<% end %>
+<hr>
+<%= simple_form_for [@article, Comment.new] do |f| %>
+	<%= f.input :author %>
+	<%= f.input :body %>
+	<%= f.submit "Post Comment" %>
+<% end %>

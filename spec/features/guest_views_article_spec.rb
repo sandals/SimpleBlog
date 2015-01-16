@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "Guest views article" do
-	scenario "from homepage" do
+	scenario "successfully" do
 		article = FactoryGirl.create(:published_article)
 
 		visit root_path
