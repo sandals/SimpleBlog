@@ -19,7 +19,9 @@ feature "Admin updates articles" do
 
 		visit admin_root_path
 		click_on old_article_title
-		fill_in "Title", with: "New Title"
+		within('.edit_article') do
+			fill_in "Title", with: "New Title"
+		end
 		click_on "Save"
 
 		expect(page).to have_content("New Title")

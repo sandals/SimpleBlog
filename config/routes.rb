@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 	scope "/dashboard", module: 'admin', as: "admin" do
 		get "/", to: "dashboard#index", as: "root"
 
-		resources :articles, only: [:new, :create, :edit, :update]
+		resources :articles, only: [:new, :create, :edit, :update, :destroy]
 	end
 
 	resources :articles, only: [:show] do

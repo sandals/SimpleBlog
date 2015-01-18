@@ -29,6 +29,17 @@ class Admin::ArticlesController < ApplicationController
 		redirect_to admin_root_path
 	end
 
+	def destroy
+		@article = Article.find(params[:id])
+
+		if params[:article][:title] == @article.title
+			@article.destroy
+			redirect_to admin_root_path
+		else
+			render :edit
+		end
+	end
+
 	private
 
 	def article_params
