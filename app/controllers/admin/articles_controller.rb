@@ -13,6 +13,22 @@ class Admin::ArticlesController < ApplicationController
 		redirect_to dashboard_root_path
 	end
 
+	def edit
+		@article = Article.find(params[:id])		
+	end
+
+	def update
+		@article = Article.find(params[:id])
+		if params[:publish]
+			@article.published = true
+		else
+			@article.published = false
+		end
+		@article.update(article_params)
+
+		redirect_to dashboard_root_path
+	end
+
 	private
 
 	def article_params
