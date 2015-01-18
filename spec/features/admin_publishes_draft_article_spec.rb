@@ -5,7 +5,7 @@ feature "Admin publishes draft article" do
 		article = FactoryGirl.create(:article)
 		article_title = article.title.titleize
 
-		visit dashboard_root_path
+		visit admin_root_path
 		click_on article_title
 		click_on "Publish"
 

@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "Admin creates article" do
 	scenario "saves as draft" do
-		visit dashboard_root_path
+		visit admin_root_path
 
 		click_on "New Article"
 		fill_in "Title", with: "Example Title"
@@ -13,7 +13,7 @@ feature "Admin creates article" do
 	end
 
 	scenario "publishes" do
-		visit dashboard_root_path
+		visit admin_root_path
 		
 		click_on "New Article"
 		fill_in "Title", with: "Example"

@@ -10,7 +10,7 @@ class Admin::ArticlesController < ApplicationController
 		end
 		@article.save
 
-		redirect_to dashboard_root_path
+		redirect_to admin_root_path
 	end
 
 	def edit
@@ -26,7 +26,7 @@ class Admin::ArticlesController < ApplicationController
 		end
 		@article.update(article_params)
 
-		redirect_to dashboard_root_path
+		redirect_to admin_root_path
 	end
 
 	private
