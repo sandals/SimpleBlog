@@ -1,0 +1,6 @@
+<%= link_to "New Article", new_dashboard_article_path %>
+<hr>
+<% @dashboard.articles.each do |article| %>
+	<%= "<small>draft</small>".html_safe unless article.published %>
+	<%= article.title.titleize %>
+<% end %>
