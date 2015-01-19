@@ -1,6 +1,10 @@
 require "rails_helper"
 
 feature "Admin creates article" do
+	before(:each) do
+		sign_in
+	end
+
 	scenario "saves as draft" do
 		visit admin_root_path
 

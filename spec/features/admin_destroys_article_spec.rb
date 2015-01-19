@@ -1,6 +1,10 @@
 require "rails_helper"
 
 feature "Admin removes an article:" do
+	before(:each) do
+		sign_in
+	end
+	
 	scenario "successfully" do
 		article = FactoryGirl.create(:article)
 		article_title = article.title.titleize

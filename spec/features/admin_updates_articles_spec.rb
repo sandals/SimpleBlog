@@ -1,6 +1,10 @@
 require "rails_helper"
 
 feature "Admin updates articles" do
+	before(:each) do
+		sign_in
+	end
+
 	scenario "publishing drafts" do
 		article = FactoryGirl.create(:article)
 		article_title = article.title.titleize
