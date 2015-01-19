@@ -1,5 +1,6 @@
 class Admin::ArticlesController < ApplicationController
 	before_filter :require_login
+	layout 'admin'
 
 	def new
 		@article = Article.new
