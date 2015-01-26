@@ -1,6 +1,7 @@
 <div id="remove_article_confirmation">
 	<%= simple_form_for :article, url: admin_article_path(@article), method: :delete do |f| %>
-		<%= f.input :title, label: "Confirm Article Title to Remove" %>
+		<%= f.input :title, label: "Confirm Article Title to Remove",
+												input_html: { value: "" } %>
 		<%= f.submit "Remove" %>
 	<% end %>
 </div>
