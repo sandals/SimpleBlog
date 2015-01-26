@@ -1,5 +1,3 @@
-<%= link_to "New Article", new_admin_article_path %>
-<hr>
 <% @dashboard.articles.each do |article| %>
 	<%= "<small>draft</small>".html_safe unless article.published %>
 	<%= link_to article.title.titleize, edit_admin_article_path(article) %>

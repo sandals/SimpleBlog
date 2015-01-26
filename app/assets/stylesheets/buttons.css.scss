@@ -1,0 +1,11 @@
+.button-warning {
+	border-bottom: 2px solid hsl(0, 57%, 41%);
+	background: hsl(0, 57%, 51%);
+	color: white;
+}
+
+.pure-button-primary:hover,
+.button-warning:hover {
+	color: white;
+}
+

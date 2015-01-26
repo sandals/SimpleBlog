@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<title>SimpleBlog</title>
-		<%= stylesheet_link_tag    'application', media: 'all' %>
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 		<!--[if lte IE 8]>
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
@@ -10,27 +9,32 @@
 		<!--[if gt IE 8]><!-->
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
 		<!--<![endif]-->
+		<%= stylesheet_link_tag    'application', media: 'all' %>
 		<%= javascript_include_tag 'application' %>
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
 
-		<% if signed_in? %>
-			Signed in as: <%= current_user.email %>
-		<%= button_to 'Sign out', sign_out_path, method: :delete %>
-	<% else %>
-		<%= link_to 'Sign in', sign_in_path %>
-	<% end %>
-	<hr>
+		<div class="admin-topbar pure-g">
+			<div class="pure-u-1-2">
+				<%= link_to "New Article", new_admin_article_path, class: "pure-button pure-button-primary" %>
+			</div>
+			<div class="pure-u-1-2 u-pull-right">
+				<%= link_to 'Sign out', sign_out_path, method: :delete, class: "pure-button button-warning" %>
+			</div>
+		</div>
+
+		<div class="pure-g">
+
+			<% flash.each do |key, value| %>
+				<div class="flash <%= key %> pure-u-1"><%= value %></div>
+			<% end %>
 
 
-	<div id="flash">
-		<% flash.each do |key, value| %>
-			<div class="flash <%= key %>"><%= value %></div>
-		<% end %>
-	</div>
-
-	<%= yield %>
+			<div class="content pure-u-1">
+				<%= yield %>
+			</div>
+		</div>
 
 	</body>
 </html>
