@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+$soft_border_color: hsl(0, 0%, 97%);
+
+.content {
+	padding: 2em;
+}
+.content-subheading {
+	text-transform: uppercase;
+	border-bottom: 1px solid $soft_border_color;
+}
