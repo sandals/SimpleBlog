@@ -16,6 +16,19 @@
 
 $soft_border_color: hsl(0, 0%, 97%);
 
+a {
+	color: hsl(210, 90%, 50%);
+}
+a:hover,
+a:focus {
+	color: hsl(210, 90%, 35%);
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
 .content {
 	padding: 2em;
 }
