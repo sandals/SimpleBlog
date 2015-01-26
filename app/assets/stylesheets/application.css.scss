@@ -33,6 +33,15 @@ a:focus {
 	text-align: right;
 }
 
+.pure-gt-sm {
+	display: inline;
+}
+@media screen and (max-width: 35.5em) {
+	.pure-gt-sm {
+		display: none;
+	}
+}
+
 .content {
 	padding: 2em;
 }

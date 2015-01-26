@@ -20,6 +20,7 @@
 				<%= link_to "New Article", new_admin_article_path, class: "pure-button pure-button-primary" %>
 			</div>
 			<div class="pure-u-1-2 u-pull-right">
+				<span class="admin-email pure-gt-sm"><%= current_user.email %></span>
 				<%= link_to 'Sign out', sign_out_path, method: :delete, class: "pure-button button-warning" %>
 			</div>
 		</div>
