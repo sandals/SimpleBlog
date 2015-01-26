@@ -14,16 +14,18 @@
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
-
 		<div class="admin-topbar pure-g">
 			<div class="pure-u-1-2">
-				<% if controller?("admin/articles") && action?("new") %>
-					<% disabled = "pure-button-disabled" %>
-				<% end %>
-				<%= link_to "New Article", new_admin_article_path, class: "pure-button pure-button-primary #{disabled}" %>
+				<span class="admin-brand">
+					<%= link_to "Dashboard", admin_root_path %>
+				</span>
 			</div>
 			<div class="pure-u-1-2 u-pull-right">
-				<span class="admin-email pure-gt-sm"><%= current_user.email %></span>
+				<% if controller?("admin/articles") && action?("new") %>
+				<%= link_to "New Article", "#", id: "new_article_btn", class: "admin-spacer pure-button pure-button-primary pure-button-disabled" %>
+			<% else %>
+				<%= link_to "New Article", new_admin_article_path, id: "new_article_btn", class: "admin-spacer pure-button pure-button-primary" %>
+			<% end %>
 				<%= link_to 'Sign out', sign_out_path, method: :delete, class: "pure-button button-warning" %>
 			</div>
 		</div>
@@ -34,11 +36,9 @@
 				<div class="flash <%= key %> pure-u-1"><%= value %></div>
 			<% end %>
 
-
 			<div class="content pure-u-1">
 				<%= yield %>
 			</div>
 		</div>
-
 	</body>
 </html>

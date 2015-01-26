@@ -9,9 +9,24 @@
 	color: hsl(192, 15%, 94%);
 }
 
-.admin-title {
-	margin: 0;
-	font-size: 2em;
+.admin-spacer {
+	margin-right: 0.5em;
+}
+
+.admin-brand {
+	display: inline-block;
+	font-size: 1.3em;
+	margin-top: 0.3em;
+
+	a {
+		color: white;
+		vertical-align: middle;
+		text-decoration: none;
+
+		&:hover {
+			color: hsl(0, 0%, 95%);
+		}
+	}
 }
 
 #remove_article_confirmation {
