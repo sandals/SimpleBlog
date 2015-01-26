@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'simple_form'
 gem 'clearance'
+gem 'html-pipeline'
+gem 'github-markdown'
 
 group :development, :test do
   gem 'byebug'

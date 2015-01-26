@@ -1,5 +1,13 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Article, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Article, ".render_body" do
+	it "returns the processed markdown of the raw article body" do
+		article = FactoryGirl.build(:article)
+		article.body = "This is **some** seriously kewl *md*."
+		article.save
+
+		rendered_md = article.render_body
+
+		expect(rendered_md).to eq("<p>This is <strong>some</strong> seriously kewl <em>md</em>.</p>")
+	end
 end
