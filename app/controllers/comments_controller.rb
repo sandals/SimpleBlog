@@ -5,9 +5,12 @@ class CommentsController < ApplicationController
 		if comment.author.blank?
 			comment.author = "Anonymous"
 		end
-		comment.save
-
-		redirect_to @article
+		
+		if comment.save
+			redirect_to @article
+		else
+			redirect_to @article, notice: "Comment body is required" 
+		end
 	end
 
 	private
