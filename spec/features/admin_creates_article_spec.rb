@@ -5,6 +5,20 @@ feature "Admin creates article" do
 		sign_in
 	end
 
+	scenario "with excerpt" do
+		visit admin_root_path
+
+		click_on "New Article"
+		fill_in "Title", with: "Title"
+		fill_in "Excerpt", with: "This is a cool post"
+		fill_in "Body", with: "Amazing content lmao"
+		click_on "Publish"
+
+		visit root_path
+		expect(page).to have_content("Title")
+		expect(page).to have_content("This is a cool post")
+	end
+
 	scenario "saves as draft" do
 		visit admin_root_path
 

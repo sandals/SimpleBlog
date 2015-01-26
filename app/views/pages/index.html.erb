@@ -1,6 +1,7 @@
 <% if @articles.any? %>
 	<% @articles.each do |article| %>
 		<%= link_to article.title, article %>
+		<p><%= article.excerpt %></p>
 	<% end %>
 <% else %>
 We haven't published anything yet!

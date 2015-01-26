@@ -31,4 +31,20 @@ feature "Admin updates articles" do
 		expect(page).to have_content("New Title")
 		expect(page).to_not have_content(old_article_title)
 	end
+
+	scenario "updating excerpt" do
+		article = FactoryGirl.create(:article)
+		old_excerpt = article.excerpt
+
+		visit admin_root_path
+		click_on article.title.titleize
+		within('.edit_article') do
+			fill_in "Excerpt", with: "New Excerpt"
+		end
+		click_on "Publish"
+		visit root_path
+
+		expect(page).to have_content("New Excerpt")
+		expect(page).to_not have_content(old_excerpt)
+	end
 end
