@@ -17,11 +17,9 @@
 
 
 	<div class="pure-g">
-		<div id="flash" class="pure-u-1">
 			<% flash.each do |key, value| %>
-				<div class="flash <%= key %>"><%= value %></div>
+				<div class="flash <%= key %> pure-u-1"><%= value %></div>
 			<% end %>
-		</div>
 
 		<div class="content pure-u-1">
 		<%= yield %>

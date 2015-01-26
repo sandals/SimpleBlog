@@ -1,0 +1,25 @@
+.comment-form {
+}
+
+.form-group {
+	margin-bottom: 1em;
+}
+
+.control-label {
+	display: block;
+
+	abbr {
+		color: hsl(0, 57%, 51%);
+	}
+}
+
+.form-control {
+	margin-top: 0.5em;
+	padding: 0.5em;
+	width: 100%;
+	border: 1px solid hsl(0, 0%, 75%);
+	border-radius: 2px;
+}
+.form-control:focus {
+	border: 1px solid black;
+}
