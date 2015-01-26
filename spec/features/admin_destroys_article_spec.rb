@@ -12,7 +12,7 @@ feature "Admin removes an article:" do
 		visit admin_root_path
 		click_on article_title
 		within("#remove_article_confirmation") do
-			fill_in "Confirm Article Title to Remove", with: article.title
+			fill_in "article_title", with: article.title
 		end
 		click_button "Remove"
 
@@ -26,7 +26,7 @@ feature "Admin removes an article:" do
 		visit admin_root_path
 		click_on article_title
 		within("#remove_article_confirmation") do
-			fill_in "Confirm Article Title to Remove", with: ""
+			fill_in "article_title", with: ""
 		end
 		click_button "Remove"
 

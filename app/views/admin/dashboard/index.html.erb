@@ -1,4 +1,14 @@
+<h1 class="content-subheading">Articles</h1>
 <% @dashboard.articles.each do |article| %>
+	<div class="post-listing">
+		<div class="post-header">
 	<%= "<small>draft</small>".html_safe unless article.published %>
-	<%= link_to article.title.titleize, edit_admin_article_path(article) %>
+	<h2 class="post-title">
+		<%= link_to article.title.titleize, edit_admin_article_path(article) %>
+	</h2>
+		</div>
+		<div class="post-excerpt">
+			<p><%= article.excerpt %></p>
+		</div>
+	</div>
 <% end %>

@@ -1,7 +1,1 @@
-<%= simple_form_for [:admin, @article] do |f| %>
-	<%= f.input :title %>
-	<%= f.input :excerpt %>
-	<%= f.input :body, as: :text %>
-	<%= f.submit "Save as Draft" %>
-	<%= f.submit "Publish", name: "publish" %>
-<% end %>
+<%= render "update_form" %>

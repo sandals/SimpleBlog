@@ -2,7 +2,7 @@
 	<%= f.input :title %>
 	<%= f.input :excerpt %>
 	<%= f.input :body, as: :text %>
-	<%= f.submit "Save" %>
-	<%= f.submit "Publish", name: "publish" %>
+	<%= f.submit "Save as Draft", class: "pure-button" %>
+	<%= f.submit "Publish", name: "publish", class: "pure-button button-success" %>
 <% end %>
 

@@ -13,3 +13,14 @@
 	margin: 0;
 	font-size: 2em;
 }
+
+#remove_article_confirmation {
+	margin-top: 1em;
+	padding: 1em;
+	border: 2px solid hsl(0, 57%, 41%);
+
+	.content-subheading {
+		color: hsl(0, 57%, 51%);
+		margin-bottom: 1em;
+	}	
+}
