@@ -39,7 +39,8 @@ class Admin::ArticlesController < ApplicationController
 			@article.destroy
 			redirect_to admin_root_path
 		else
-			render :edit
+			flash[:notice] = "You must confirm the article's name in order to remove it."
+			redirect_to admin_root_path
 		end
 	end
 

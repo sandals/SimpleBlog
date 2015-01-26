@@ -8,7 +8,7 @@
 	</div>
 </div>
 <h3 class="content-subheading">Comments</h3>
-<% @article.comments.each do |comment| -%>
+<% @article.comments.order("ID DESC").each do |comment| -%>
 <div class="comment">
 	<p class="comment-body"><%= comment.body %></p>
 	<div class="comment-meta">

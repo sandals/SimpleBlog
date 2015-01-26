@@ -1,7 +1,7 @@
 <%= simple_form_for [:admin, @article] do |f| %>
 	<%= f.input :title %>
 	<%= f.input :excerpt %>
-	<%= f.input :body, as: :text %>
+	<%= f.input :body, as: :text, input_html: { rows: 15 } %>
 	<%= f.submit "Save as Draft", class: "pure-button pure-button-default" %>
 	<%= f.submit "Publish", name: "publish", class: "pure-button button-success" %>
 <% end %>

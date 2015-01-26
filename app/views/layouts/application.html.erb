@@ -17,12 +17,25 @@
 
 
 	<div class="pure-g">
-			<% flash.each do |key, value| %>
-				<div class="flash <%= key %> pure-u-1"><%= value %></div>
-			<% end %>
+		<div class="site-header pure-u-1">
+			<div class="site-logo">
+				<h1><%= link_to "Simple Blog", root_path %></h1>
+			</div>
+			<div class="header-nav">
+				<ul> 
+					<li><a href="#">About</a></li>
+					<li><%= link_to "Articles", articles_path %></li>
+					<li><a href="#">Something</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<% flash.each do |key, value| %>
+			<div class="flash <%= key %> pure-u-1"><%= value %></div>
+		<% end %>
 
 		<div class="content pure-u-1">
-		<%= yield %>
+			<%= yield %>
 		</div>
 	</body>
 </html>

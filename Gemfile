@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'clearance'
 gem 'html-pipeline'
 gem 'github-markdown'
+gem 'gemoji'
 
 group :development, :test do
   gem 'byebug'
