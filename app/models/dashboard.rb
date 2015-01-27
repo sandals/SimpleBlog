@@ -1,5 +1,5 @@
 class Dashboard
 	def articles
-		Article.all
+		Article.all.order("ID DESC")
 	end
 end

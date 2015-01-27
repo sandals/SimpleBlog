@@ -1,26 +1,28 @@
-<div class="post">
-	<div class="post-header">
-		<h1 class="post-title"><%= @article.title %></h1>
-		<p class="post-meta">Posted <%= time_ago_in_words(@article.created_at) %> ago</p>
+<div class="pure-u-1">
+	<div class="post content"> <div class="post-header">
+			<h1 class="post-title"><%= @article.title %></h1>
+			<p class="post-meta">Posted <%= time_ago_in_words(@article.created_at) %> ago</p>
+		</div>
+		<div class="post-body">
+			<p><%= @article.render_body.html_safe %></p>
+		</div>
 	</div>
-	<div class="post-body">
-		<p><%= @article.render_body.html_safe %></p>
+	<div class="comments content">
+		<h3 class="content-subheading">Comments</h3>
+		<% @article.comments.order("ID DESC").each do |comment| -%>
+			<div class="comment">
+				<p class="comment-body"><%= comment.body %></p>
+				<div class="comment-meta">
+					<p>Posted <%= time_ago_in_words(comment.created_at) %> ago by <span class="comment-author"><%= comment.author %></span></p>
+				</div>
+			</div>
+		<% end %>
+		<h3 class="content-subheading">Leave a Comment</h3>
+		<div class="comment-form">
+			<%= simple_form_for [@article, Comment.new] do |f| %>
+				<%= f.input :author %>
+				<%= f.input :body %>
+				<%= f.submit "Post Comment", class: "pure-button pure-button-primary" %>
+			<% end %>
+		</div>
 	</div>
-</div>
-<h3 class="content-subheading">Comments</h3>
-<% @article.comments.order("ID DESC").each do |comment| -%>
-<div class="comment">
-	<p class="comment-body"><%= comment.body %></p>
-	<div class="comment-meta">
-		<p>Posted <%= time_ago_in_words(comment.created_at) %> ago by <span class="comment-author"><%= comment.author %></span></p>
-	</div>
-</div>
-<% end %>
-<h3 class="content-subheading">Leave a Comment</h3>
-<div class="comment-form">
-<%= simple_form_for [@article, Comment.new] do |f| %>
-	<%= f.input :author %>
-	<%= f.input :body %>
-	<%= f.submit "Post Comment", class: "pure-button pure-button-primary" %>
-<% end %>
-</div>
